@@ -3,6 +3,7 @@ package com.example.springboot.entities;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 @Entity
@@ -16,6 +17,7 @@ public class payment_method {
     private String name;
 
     //Nhiều payment_method thuộc về 1 order
+    @JsonIgnore
     @OneToMany(mappedBy = "paymentMethod", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<order> orders = new ArrayList<>();
 

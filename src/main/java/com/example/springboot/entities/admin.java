@@ -3,6 +3,7 @@ package com.example.springboot.entities;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 //Định nghĩa một admin là 1 entity tương ứng với bảng trong db
@@ -31,6 +32,7 @@ public class admin {
     private String phone;
 
     //định nghãi một admin quản lý nhiều order
+    @JsonIgnore
     @OneToMany(mappedBy = "admin", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<order> orders = new ArrayList<>();
 

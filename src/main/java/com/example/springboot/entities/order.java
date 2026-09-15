@@ -42,4 +42,68 @@ public class order {
 
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<order_detail> orderDetails = new ArrayList<>();
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Date getOrderDate() {
+        return orderDate;
+    }
+
+    public void setOrderDate(Date orderDate) {
+        this.orderDate = orderDate;
+    }
+
+    public Double getTotalAmount() {
+        return totalAmount;
+    }
+
+    public void setTotalAmount(Double totalAmount) {
+        this.totalAmount = totalAmount;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(customer customer) {
+        this.customer = customer;
+    }
+
+    public admin getAdmin() {
+        return admin;
+    }
+
+    public void setAdmin(admin admin) {
+        this.admin = admin;
+    }
+
+    public payment_method getPaymentMethod() {
+        return paymentMethod;
+    }
+
+    public void setPaymentMethod(payment_method paymentMethod) {
+        this.paymentMethod = paymentMethod;
+    }
+
+    public List<order_detail> getOrderDetails() {
+        return orderDetails;
+    }
+
+    public void setOrderDetails(List<order_detail> orderDetails) {
+        this.orderDetails = orderDetails;
+    }
 }

@@ -12,6 +12,7 @@ import com.example.springboot.entities.admin;
 @RestController
 //Định nghĩa API
 @RequestMapping("/admins")
+@CrossOrigin(origins = "*")
 public class AdminController {
     @Autowired
     public AdminService adminService;
