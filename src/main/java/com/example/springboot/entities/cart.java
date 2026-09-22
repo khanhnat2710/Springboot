@@ -4,6 +4,7 @@ import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
 @Entity
@@ -21,5 +22,38 @@ public class cart {
 
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "customer_id")
+    @JsonIgnoreProperties({"cart", "orders"})
     private customer customer;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Date getCreateDate() {
+        return createDate;
+    }
+
+    public void setCreateDate(Date createDate) {
+        this.createDate = createDate;
+    }
+
+    public List<cart_detail> getCartDetails() {
+        return cartDetails;
+    }
+
+    public void setCartDetails(List<cart_detail> cartDetails) {
+        this.cartDetails = cartDetails;
+    }
+
+    public customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(customer customer) {
+        this.customer = customer;
+    }
 }
